@@ -11,16 +11,16 @@ public class Actor extends Person {
     @Override
     public int hashCode() {
         int hash = 31;
-        if (name != null) {
-            hash += name.hashCode();
+        if (getName() != null) {
+            hash += getName().hashCode();
 
         }
         hash *= 31;
-        if (surname != null) {
-            hash += surname.hashCode();
+        if (getSurname() != null) {
+            hash += getSurname().hashCode();
 
         }
-        hash += height;
+        hash += getHeight();
         return hash;
     }
 
@@ -33,16 +33,16 @@ public class Actor extends Person {
             return false;
         }
         Actor anotherActor = (Actor) obj;
-        return Objects.equals(name, anotherActor.name) && Objects.equals(surname, anotherActor.surname)
-                && (height == anotherActor.height);
+        return Objects.equals(getName(), anotherActor.getName()) && Objects.equals(getSurname(), anotherActor.getSurname())
+                && (getHeight() == anotherActor.getHeight());
 
     }
 
     @Override
     public String toString() {
-        return name +
-                " " + surname +
-                "(" + height + ")";
+        return getName() +
+                " " + getSurname() +
+                "(" + getHeight() + ")";
     }
 
 }
